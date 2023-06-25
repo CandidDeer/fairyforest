@@ -1,0 +1,62 @@
+<!-- Inspired by https://webdesign-master.ru/blog/html-css/parallax-scrolling-website.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="title" content="Fairy Forest" />
+    <meta name="description" content="A JS parallax effect page created by LT Design" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://candiddeer.github.io/fairyforest" />
+    <meta property="og:title" content="Fairy Forest" />
+    <meta property="og:description" content="A JS parallax effect page created by LT Design" />
+    <meta property="og:image" content="https://candiddeer.github.io/fairyforest/img/preview.png" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://candiddeer.github.io/fairyforest" />
+    <meta property="twitter:title" content="Fairy Forest" />
+    <meta property="twitter:description" content="A JS parallax effect page created by LT Design" />
+    <meta property="twitter:image" content="https://candiddeer.github.io/fairyforest/img/preview.png" />
+    <title>Fairy Forest</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="icon" href="img/favicon-gold.png" />
+    <script src="libs/gsap/gsap.min.js" defer></script>
+    <script src="libs/gsap/ScrollTrigger.min.js" defer></script>
+    <script src="libs/gsap/ScrollSmoother.min.js" defer></script>
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="contentFixed">
+        <img src="img/favicon-alabaster.png" alt="LT Design logo" class="logo" />
+        <nav class="menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="https://github.com/CandidDeer" target="_blank">News</a></li>
+            <li><a href="mailto:lisa.thamer@outlook.com?subject=Fairy%20Forest%20inquiry">Contact</a></li>
+            <li><a href="https://ltdesign.work" target="_blank">About</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="content">
+        <header class="main-header">
+          <div class="layers">
+            <div class="layer__header">
+              <div class="layers__caption">Welcome to Parallax</div>
+              <div class="layers__title">Fairy Forest</div>
+            </div>
+            <div class="layer layers__base"></div>
+            <div class="layer layers__middle"></div>
+            <div class="layer layers__front"></div>
+          </div>
+        </header>
+        <article class="main-article">
+          <div class="main-article__content">
+            <h2 class="main-article__header">Lorem Ipsum</h2>
+            <p class="main-article__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur non fugit consequuntur ad fugiat maiores delectus, harum quia vero nulla obcaecati commodi natus consectetur. Rerum blanditiis eius amet voluptatem illo.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

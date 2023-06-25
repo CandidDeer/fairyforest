@@ -1,0 +1,197 @@
+/* Color scheme:
+Black: #000000;
+French bistre: #8e724d;
+Navajo white: #ffe0b5;
+Dark sienna: #350005;
+Rosy brown: #bd8a84;
+*/
+
+@font-face {
+  font-family: raleway_f;
+  src: url(../fonts/raleway-regular.woff2);
+}
+
+@font-face {
+  font-family: raleway_f;
+  font-weight: 900;
+  src: url(../fonts/raleway-black.woff2);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*:focus {
+  outline: solid 0.125rem var(--outline);
+}
+
+:root {
+  --background: #010101;
+  --hover: #ffe0b5;
+  --index: calc(1vw + 1vh);
+  --outline: #8e724d;
+  --shadow: #9d822b;
+  --text: #e7e7e0;
+  --transition: transform 0.75s cubic-bezier(0.075, 0.5, 0, 1);
+}
+
+body {
+  background-color: var(--background);
+  font-family: raleway_f, sans-serif;
+  line-height: 1.55;
+}
+
+.contentFixed {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: calc(var(--index) * 1.5);
+  position: fixed;
+  width: 100%;
+  z-index: 200;
+}
+
+.logo {
+  filter: drop-shadow(0 0 15px var(--shadow));
+  height: calc(var(--index) * 2.25);
+}
+
+.menu ul {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: calc(var(--index) * 2.25);
+  list-style-type: none;
+}
+
+.menu ul li a {
+  color: var(--text);
+  font-size: calc(var(--index) / 1.5);
+  font-weight: bold;
+  letter-spacing: calc(var(--index) / 7.5);
+  text-decoration: none;
+  text-shadow: 0 0 15px var(--shadow);
+  text-transform: uppercase;
+  transition: color 0.5s;
+}
+
+.menu ul li:not(:last-child) a {
+  margin-right: calc(var(--index) * 1.25);
+}
+
+.menu ul li a:hover {
+  color: var(--hover);
+}
+
+.main-header {
+  position: relative;
+}
+
+.main-header::after {
+  background-image: url(../img/ground.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  bottom: calc(var(--index) * -4.5);
+  content: "";
+  height: calc(var(--index) * 10);
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+}
+
+.layers {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+
+.layer__header {
+  color: var(--text);
+  font-weight: bold;
+  text-shadow: 0 0 15px var(--shadow);
+  text-transform: uppercase;
+  transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+  transition: var(--transition);
+  will-change: transform;
+  z-index: 1;
+}
+
+.layers__caption {
+  font-size: calc(var(--index) / 1.175);
+  letter-spacing: calc(var(--index) / 3.5);
+  margin-top: calc(var(--index) * -0.75);
+}
+
+.layers__title {
+  font-size: calc(var(--index) * 2.65);
+  letter-spacing: calc(var(--index) / 2.25);
+}
+
+.layer {
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  position: absolute;
+  transition: var(--transition);
+  width: 100%;
+  will-change: transform;
+  z-index: 2;
+}
+
+.layers__base {
+  background-image: url(../img/layer-base.png);
+  transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
+  z-index: 0;
+}
+
+.layers__middle {
+  background-image: url(../img/layer-middle.png);
+  transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
+}
+
+.layers__front {
+  background-image: url(../img/layer-front.png);
+  transform: translate3d(0, calc(var(--scrollTop) / 5.7), 0);
+}
+
+.main-article {
+  align-items: center;
+  background-image: url(../img/dungeon.jpg);
+  background-position: center;
+  background-size: cover;
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+  top: -1px;
+  z-index: 10;
+}
+
+.main-article__header {
+  font-size: calc(var(--index) * 1.8);
+  letter-spacing: calc(var(--index) / 7.5);
+  text-align: center;
+  text-transform: uppercase;
+  transform: var(--main-article-transform);
+  transition: var(--transition);
+  will-change: transform;
+}
+
+.main-article__paragraph {
+  font-size: calc(var(--index) * 0.9);
+  margin-top: calc(var(--index) / 1.25);
+  max-width: calc(var(--index) * 30);
+  text-align: justify;
+  transform: var(--main-article-transform);
+  transition: var(--transition);
+  will-change: transform;
+}
